@@ -16,482 +16,212 @@
   generateTokenAccessors=true
 
   tokens =  [
-  Assign =  "="
-  At =  "@"
-  BitAnd =  "&"
-  BitAndEqual =  "&="
-  BitOr =  "|"
-  BitOrEqual =  "|="
-  CatEqual =  "~="
-  Colon =  " ="
-  Comma =  ","
-  Decrement =  "--"
-  Div =  "/"
-  DivEqual =  "/="
-  Dollar =  "$"
-  Dot =  "."
-  Equal =  "=="
-  GoesTo =  "=>"
-  Greater =  ">"
-  GreaterEqual =  ">="
-  Hash =  "#"
-  Increment =  "++"
-  LBrace =  "{"
-  LBracket =  "["
-  Less =  "<"
-  LessEqual =  "<="
-  LessEqualGreater =  "<>="
-  LessOrGreater =  "<>"
-  LogicAnd =  "&&"
-  LogicOr =  "||"
-  LParen =  "("
-  Minus =  "-"
-  MinusEqual =  "-="
-  Mod =  "%"
-  ModEqual =  "%="
-  MulEqual =  "*="
-  Not =  "!"
-  NotEqual =  "!="
-  NotGreater =  "!>"
-  NotGreaterEqual =  "!>="
-  NotLess =  "!<"
-  NotLessEqual =  "!<="
-  NotLessEqualGreater =  "!<>"
-  Plus =  "+"
-  PlusEqual =  "+="
-  Pow =  "^^"
-  PowEqual =  "^^="
-  RBrace =  "}"
-  RBracket =  "]"
-  RParen =  ")"
-  Semicolon =  ""
-  ShiftLeft =  "<<"
-  ShiftLeftEqual =  "<<="
-  ShiftRight =  ">>"
-  ShiftRightEqual =  ">>="
-  Slice =  ".."
-  Star =  "*"
-  Ternary =  "?"
-  Tilde =  "~"
-  Unordered =  "!<>="
-  UnsignedShiftRight =  ">>>"
-  UnsignedShiftRightEqual =  ">>>="
-  Vararg =  "..."
-  Xor =  "^"
-  XorEqual =  "^="
-  Bool =  "bool"
-  Byte =  "byte"
-  Cdouble =  "cdouble"
-  Cent =  "cent"
-  Cfloat =  "cfloat"
-  Char =  "char"
-  Creal =  "creal"
-  Dchar =  "dchar"
-  Double =  "double"
-  Float =  "float"
-  Function =  "function"
-  Idouble =  "idouble"
-  Ifloat =  "ifloat"
-  Int =  "int"
-  Ireal =  "ireal"
-  Long =  "long"
-  Real =  "real"
-  Short =  "short"
-  Ubyte =  "ubyte"
-  Ucent =  "ucent"
-  Uint =  "uint"
-  Ulong =  "ulong"
-  Ushort =  "ushort"
-  Void =  "void"
-  Wchar =  "wchar"
-  Align =  "align"
-  TDeprecated =  "deprecated"
-  Extern =  "extern"
-  Pragma =  "pragma"
-  Export =  "export"
-  Package =  "package"
-  Private =  "private"
-  Protected =  "protected"
-  Public =  "public"
-  Abstract =  "abstract"
-  Auto =  "auto"
-  Const =  "const"
-  Final =  "final"
-  Gshared =  "__gshared"
-  Immutable =  "immutable"
-  Inout =  "inout"
-  Scope =  "scope"
-  Shared =  "shared"
-  Static =  "static"
-  Synchronized =  "synchronized"
-  Alias =  "alias"
-  Asm =  "asm"
-  Assert =  "assert"
-  Body =  "body"
-  Break =  "break"
-  Case =  "case"
-  Cast =  "cast"
-  TCatch =  "catch"
-  Class =  "class"
-  Continue =  "continue"
-  Debug =  "debug"
-  Default =  "default"
-  Delegate =  "delegate"
-  Delete =  "delete"
-  Do =  "do"
-  Else =  "else"
-  Enum =  "enum"
-  False =  "false"
-  TFinally =  "finally"
-  Foreach =  "foreach"
-  Foreach_reverse =  "foreach_reverse"
-  For =  "for"
-  Goto =  "goto"
-  If =  "if"
-  Import =  "import"
-  In =  "in"
-  Interface =  "interface"
-  TInvariant =  "invariant"
-  Is =  "is"
-  Lazy =  "lazy"
-  Macro =  "macro"
-  Mixin =  "mixin"
-  TModule =  "module"
-  New =  "new"
-  Nothrow =  "nothrow"
-  Null =  "null"
-  Out =  "out"
-  Override =  "override"
-  Pure =  "pure"
-  Ref =  "ref"
-  Return =  "return"
-  Struct =  "struct"
-  Super =  "super"
-  Switch =  "switch"
-  Template =  "template"
-  This =  "this"
-  Throw =  "throw"
-  True =  "true"
-  Try =  "try"
-  Typedef =  "typedef"
-  Typeid =  "typeid"
-  Typeof =  "typeof"
-  Union =  "union"
-  TUnittest =  "unittest"
-  Version =  "version"
-  Volatile =  "volatile"
-  While =  "while"
-  With =  "with"
-  SpecialDate = "__DATE__"
-  SpecialEof = "__EOF__"
-  SpecialTime = "__TIME__"
-  Specialimestamp = "__TIMESTAMP__"
-  SpecialVendor = "__VENDOR__"
-  SpecialVersion = "__VERSION__"
-  SpecialFile = "__FILE__"
-  SpecialLine = "__LINE__"
-  SpecialModule = "__MODULE__"
-  SpecialFunction = "__FUNCTION__"
-  SpecialPrettyFunction = "__PRETTY_FUNCTION__"
-  Traits = "__traits"
-  TParameters = "__parameters"
-  TVector = "__vector"
-  Whitespace = "regexp:[\u0020\u0009\u000b\u000c\u000a\u000d]+"
-  Space = "[\u0020\u0009\u000B\u000C]"
-  EndOfLine = "regexp:(\u000d|\u000a|\u000d\u000a|\u2028|\u2029)"
-  Character =  "regexp:[\u0001-\uffff]"
-  HexDigit = "regexp:[a-fA-F0-9]"
-  OctalDigit = "regexp:[0-7]"
-  BinDigit = "regexp:[01]"
-  DecimalDigit = "regexp:[0-9]"
-  BlockComment = "regexp:\/*.*? *\/"
-  Identifier = "regexp:([a-zA-Z_])([a-zA-Z0-9_])*"
-  LineComment = "regexp://(~[\u000D\u000A\u2028\u2029])* (\u000d|\u000a|\u000d\u000a|\u2028|\u2029)"
-
-//fragment WysiwygString : 'r"' .*? '"' StringPostfix?;
-//fragment AlternativeWysiwygString : '`' .*? '`' StringPostfix?;
-//fragment EscapeSequence : '\\\''
-//    | '\\"'
-//    | '\\\\'
-//    | '\\?'
-//    | '\\0'
-//    | '\\a'
-//    | '\\b'
-//    | '\\f'
-//    | '\\n'
-//    | '\\r'
-//    | '\\t'
-//    | '\\v'
-//    | '\\x' HexDigit HexDigit
-//    | '\\' OctalDigit OctalDigit? OctalDigit?
-//    | '\\u' HexDigit HexDigit HexDigit HexDigit
-//    | '\\U' HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit HexDigit
-//    | '\\&' Identifier ';';
-//fragment HexStringChar : [0-9a-fA-F] | Whitespace | EndOfLine;
-//fragment StringPostfix : [dwc];
-//fragment DoubleQuotedCharacter : EscapeSequence | ~('"' | '\\' );
-//fragment DoubleQuotedString : '"' DoubleQuotedCharacter* '"'  StringPostfix?;
-//fragment HexString: 'x"' HexStringChar* '"' StringPostfix?;
-//// fragment DelimitedString: 'q"' Delimiter WysiwygCharacter+ MatchingDelimiter '"';
-//// fragment TokenString: 'q{' Token* '}';
-//fragment StringFragment : WysiwygString | AlternativeWysiwygString | DoubleQuotedString | HexString /*| DelimitedString | TokenString*/;
-//StringLiteral : StringFragment (Whitespace? StringFragment)*;
-//
-//CharacterLiteral: '\'' ( EscapeSequence | ~[\\'] )*? '\'';
-//
-//IntegerLiteral: Integer IntegerSuffix?;
-//fragment Integer: BinaryInteger | DecimalInteger | HexadecimalInteger;
-//fragment IntegerSuffix: ('L' | 'u' | 'U' | 'Lu' | 'LU' | 'uL' | 'UL');
-//fragment DecimalInteger: DecimalDigit (DecimalDigit | '_')*;
-//fragment BinaryInteger: ('0b' | '0B') BinDigit (BinDigit | '_')*;
-//fragment HexadecimalInteger: ('0x' | '0X') HexDigit (HexDigit | '_')*;
-//
-//FloatLiteral: (FloatOption (FloatSuffix | RealSuffix)?) | (Integer (FloatSuffix | RealSuffix)? ImaginarySuffix);
-//fragment FloatOption: DecimalFloat | HexFloat;
-//fragment DecimalFloat
-//    : DecimalInteger '.' (DecimalDigit (DecimalDigit | '_')* DecimalExponent?)?  // BUG: can't lex a[0..1] properly
-//    | '.' DecimalInteger DecimalExponent?
-//    | DecimalInteger DecimalExponent
-//    ;
-//fragment DecimalExponent: ('e' | 'E' | 'e+' | 'E+' | 'e-' | 'E-') DecimalInteger;
-//fragment FloatSuffix: 'F' | 'f';
-//fragment RealSuffix: 'L';
-//fragment ImaginarySuffix: 'i';
-//fragment HexFloat: ('0x' | '0X') ((HexDigit (HexDigit | '_')* '.' HexDigit (HexDigit | '_')*) | ('.' HexDigit (HexDigit | '_')*) | (HexDigit (HexDigit | '_')*)) HexExponent;
-//fragment HexExponent: ('p' | 'P' | 'p+' | 'P+' | 'p-' | 'P-') DecimalDigit (DecimalDigit | '_')*;
-//
-//SpecialTokenSequence: '#line' Space+ IntegerLiteral Space* ('"' .*? '"' Space*)? (EndOfLine | EOF) -> skip;
-//fragment Space: [\u0020\u0009\u000B\u000C];
-
-
+EOF = "EOF"
+INVALID_TOKEN = "INVALID_TOKEN"
+LINE_END = "LINE_END"
+WHITESPACE = "WHITESPACE"
+GROUP_COMMENT = "GROUP_COMMENT"
+COMMENT_MULTI = "COMMENT_MULTI"    
+COMMENT_NESTED = "COMMENT_NESTED"   
+COMMENT_LINE = "COMMENT_LINE"     
+DOCCOMMENT_MULTI = "DOCCOMMENT_MULTI" 
+DOCCOMMENT_NESTED = "DOCCOMMENT_NESTED"
+DOCCOMMENT_LINE = "DOCCOMMENT_LINE"  
+SCRIPT_LINE_INTRO = "SCRIPT_LINE_INTRO"
+SPECIAL_TOKEN_LINE = "SPECIAL_TOKEN_LINE"
+IDENTIFIER = "IDENTIFIER"
+STRING_WYSIWYG = "STRING_WYSIWYG"
+STRING_DQ = "STRING_DQ"     
+STRING_HEX = "STRING_HEX"    
+STRING_DELIM = "STRING_DELIM"  
+STRING_TOKENS = "STRING_TOKENS" 
+CHARACTER = "CHARACTER"
+INTEGER_DECIMAL = "INTEGER_DECIMAL" 
+INTEGER_BINARY = "INTEGER_BINARY"  
+INTEGER_OCTAL = "INTEGER_OCTAL"   
+INTEGER_HEX = "INTEGER_HEX"    
+FLOAT_DECIMAL = "FLOAT_DECIMAL"
+FLOAT_HEX = "FLOAT_HEX"    
+OPEN_PARENS = "OPEN_PARENS"
+CLOSE_PARENS = "CLOSE_PARENS"
+OPEN_BRACE = "OPEN_BRACE"
+CLOSE_BRACE = "CLOSE_BRACE"
+OPEN_BRACKET = "OPEN_BRACKET"
+CLOSE_BRACKET = "CLOSE_BRACKET"
+SEMICOLON = "SEMICOLON"
+COLON = "COLON"
+QUESTION = "QUESTION"
+COMMA = "COMMA"
+DOLLAR = "DOLLAR"
+AT = "AT"
+DOT = "DOT"
+DOUBLE_DOT = "DOUBLE_DOT"
+TRIPLE_DOT = "TRIPLE_DOT"
+DECREMENT = "DECREMENT"
+INCREMENT = "INCREMENT"
+MINUS = "MINUS"
+MINUS_ASSIGN = "MINUS_ASSIGN"
+PLUS = "PLUS"
+PLUS_ASSIGN = "PLUS_ASSIGN"
+DIV = "DIV"
+DIV_ASSIGN = "DIV_ASSIGN"
+STAR = "STAR"
+MULT_ASSIGN = "MULT_ASSIGN"
+MOD = "MOD"
+MOD_ASSIGN = "MOD_ASSIGN"
+POW = "POW"
+POW_ASSIGN = "POW_ASSIGN"
+AND = "AND"
+AND_ASSIGN = "AND_ASSIGN"
+OR = "OR"
+OR_ASSIGN = "OR_ASSIGN"
+XOR = "XOR"
+XOR_ASSIGN = "XOR_ASSIGN"
+CONCAT = "CONCAT"
+CONCAT_ASSIGN = "CONCAT_ASSIGN"
+LOGICAL_AND = "LOGICAL_AND"
+LOGICAL_OR = "LOGICAL_OR"
+LAMBDA = "LAMBDA"
+ASSIGN = "ASSIGN"
+EQUALS = "EQUALS"
+NOT = "NOT"
+NOT_EQUAL = "NOT_EQUAL"
+LESS_THAN = "LESS_THAN"
+LESS_EQUAL = "LESS_EQUAL"
+GREATER_THAN = "GREATER_THAN"
+GREATER_EQUAL = "GREATER_EQUAL"
+LESS_GREATER = "LESS_GREATER"
+LESS_GREATER_EQUAL = "LESS_GREATER_EQUAL"
+UNORDERED_E = "UNORDERED_E"
+UNORDERED = "UNORDERED"
+UNORDERED_GE = "UNORDERED_GE"
+UNORDERED_G = "UNORDERED_G"
+UNORDERED_LE = "UNORDERED_LE"
+UNORDERED_L = "UNORDERED_L"
+LEFT_SHIFT = "LEFT_SHIFT"
+LEFT_SHIFT_ASSIGN = "LEFT_SHIFT_ASSIGN"
+RIGHT_SHIFT = "RIGHT_SHIFT"
+RIGHT_SHIFT_ASSIGN = "RIGHT_SHIFT_ASSIGN"
+TRIPLE_RSHIFT = "TRIPLE_RSHIFT"
+TRIPLE_RSHIFT_ASSIGN = "TRIPLE_RSHIFT_ASSIGN"
+KW_BOOL = "KW_BOOL"
+KW_VOID = "KW_VOID"
+KW_BYTE = "KW_BYTE"
+KW_UBYTE = "KW_UBYTE"
+KW_SHORT = "KW_SHORT"
+KW_USHORT = "KW_USHORT"
+KW_INT = "KW_INT"
+KW_UINT = "KW_UINT"
+KW_LONG = "KW_LONG"
+KW_ULONG = "KW_ULONG"
+KW_CENT = "KW_CENT"
+KW_UCENT = "KW_UCENT"
+KW_CHAR = "KW_CHAR"
+KW_WCHAR = "KW_WCHAR"
+KW_DCHAR = "KW_DCHAR"
+KW_FLOAT = "KW_FLOAT"
+KW_DOUBLE = "KW_DOUBLE"
+KW_REAL = "KW_REAL"
+KW_IFLOAT = "KW_IFLOAT"
+KW_IDOUBLE = "KW_IDOUBLE"
+KW_IREAL = "KW_IREAL"
+KW_CFLOAT = "KW_CFLOAT"
+KW_CDOUBLE = "KW_CDOUBLE"
+KW_CREAL = "KW_CREAL"
+KW_PRIVATE = "KW_PRIVATE"
+KW_PACKAGE = "KW_PACKAGE"
+KW_PROTECTED = "KW_PROTECTED"
+KW_PUBLIC = "KW_PUBLIC"
+KW_EXPORT = "KW_EXPORT"
+KW_ABSTRACT = "KW_ABSTRACT"
+KW_DEPRECATED = "KW_DEPRECATED"
+KW_FINAL = "KW_FINAL"
+KW_NOTHROW = "KW_NOTHROW"
+KW_OVERRIDE = "KW_OVERRIDE"
+KW_PURE = "KW_PURE"
+KW_SCOPE = "KW_SCOPE"
+KW_STATIC = "KW_STATIC"
+KW_SYNCHRONIZED = "KW_SYNCHRONIZED"
+KW_REF = "KW_REF"
+KW_CONST = "KW_CONST"
+KW_IMMUTABLE = "KW_IMMUTABLE"
+KW_INOUT = "KW_INOUT"
+KW_SHARED = "KW_SHARED"
+KW_AUTO = "KW_AUTO"
+KW_ALIAS = "KW_ALIAS"
+KW_ALIGN = "KW_ALIGN"
+KW_ASM = "KW_ASM"
+KW_ASSERT = "KW_ASSERT"
+KW_BODY = "KW_BODY"
+KW_BREAK = "KW_BREAK"
+KW_CASE = "KW_CASE"
+KW_CAST = "KW_CAST"
+KW_CATCH = "KW_CATCH"
+KW_CLASS = "KW_CLASS"
+KW_CONTINUE = "KW_CONTINUE"
+KW_DEBUG = "KW_DEBUG"
+KW_DEFAULT = "KW_DEFAULT"
+KW_DELEGATE = "KW_DELEGATE"
+KW_DELETE = "KW_DELETE"
+KW_DO = "KW_DO"
+KW_ELSE = "KW_ELSE"
+KW_ENUM = "KW_ENUM"
+KW_EXTERN = "KW_EXTERN"
+KW_FALSE = "KW_FALSE"
+KW_FINALLY = "KW_FINALLY"
+KW_FOR = "KW_FOR"
+KW_FOREACH = "KW_FOREACH"
+KW_FOREACH_REVERSE = "KW_FOREACH_REVERSE"
+KW_FUNCTION = "KW_FUNCTION"
+KW_GOTO = "KW_GOTO"
+KW_IF = "KW_IF"
+KW_IMPORT = "KW_IMPORT"
+KW_IN = "KW_IN"
+KW_INTERFACE = "KW_INTERFACE"
+KW_INVARIANT = "KW_INVARIANT"
+KW_IS = "KW_IS"
+KW_LAZY = "KW_LAZY"
+KW_MACRO = "KW_MACRO"
+KW_MIXIN = "KW_MIXIN"
+KW_MODULE = "KW_MODULE"
+KW_NEW = "KW_NEW"
+KW_NULL = "KW_NULL"
+KW_OUT = "KW_OUT"
+KW_PRAGMA = "KW_PRAGMA"
+KW_RETURN = "KW_RETURN"
+KW_STRUCT = "KW_STRUCT"
+KW_SUPER = "KW_SUPER"
+KW_SWITCH = "KW_SWITCH"
+KW_TEMPLATE = "KW_TEMPLATE"
+KW_THIS = "KW_THIS"
+KW_THROW = "KW_THROW"
+KW_TRUE = "KW_TRUE"
+KW_TRY = "KW_TRY"
+KW_TYPEDEF = "KW_TYPEDEF"
+KW_TYPEID = "KW_TYPEID"
+KW_TYPEOF = "KW_TYPEOF"
+KW_UNION = "KW_UNION"
+KW_UNITTEST = "KW_UNITTEST"
+KW_VERSION = "KW_VERSION"
+KW_VOLATILE = "KW_VOLATILE"
+KW_WHILE = "KW_WHILE"
+KW_WITH = "KW_WITH"
+KW___TRAITS = "KW___TRAITS"
+KW___GSHARED = "KW___GSHARED"
+KW___THREAD = "KW___THREAD"
+KW___VECTOR = "KW___VECTOR"
+KW___FILE__ = "KW___FILE__"
+KW___LINE__ = "KW___LINE__"
+KW___MODULE__ = "KW___MODULE__"
+KW___FUNCTION__ = "KW___FUNCTION__"
+KW___PRETTY_FUNCTION__ = "KW___PRETTY_FUNCTION__"
+KW___DATE__ = "KW___DATE__"
+KW___TIME__ = "KW___TIME__"
+KW___TIMESTAMP__ = "KW___TIMESTAMP__"
+KW___VENDOR__ = "KW___VENDOR__"
+KW___VERSION__  = "__VERSION__"  
   ]
 }
-
-dFile ::= item_*
-
-private item_ ::= (module
-| addExpression
-| aliasDeclaration
-| aliasInitializer
-| aliasThisDeclaration
-| alignAttribute
-| andAndExpression
-| andExpression
-| argumentList
-| arguments
-| arrayInitializer
-| arrayLiteral
-| arrayMemberInitialization
-| asmAddExp
-| asmAndExp
-| asmBrExp
-| asmEqualExp
-| asmExp
-| asmInstruction
-| asmLogAndExp
-| asmLogOrExp
-| asmMulExp
-| asmOrExp
-| asmPrimaryExp
-| asmRelExp
-| asmShiftExp
-| asmStatement
-| asmTypePrefix
-| asmUnaExp
-| asmXorExp
-| assertExpression
-| assignExpression
-| assignOperator
-| assocArrayLiteral
-| atAttribute
-| attribute
-| attributeDeclaration
-| autoDeclaration
-| blockStatement
-| bodyStatement
-| breakStatement
-| baseClass
-| baseClassList
-| builtinType
-| caseRangeStatement
-| caseStatement
-| castExpression
-| castQualifier
-| catch_
-| catches
-| classDeclaration
-| cmpExpression
-| compileCondition
-| conditionalDeclaration
-| conditionalStatement
-| constraint
-| constructor
-| continueStatement
-| debugCondition
-| debugSpecification
-| declaration
-| declaration2
-| declarationsAndStatements
-| declarationOrStatement
-| declarator
-| defaultStatement
-| deleteExpression
-| deprecated
-| destructor
-| doStatement
-| enumBody
-| enumDeclaration
-| enumMember
-| equalExpression
-| expression
-| expressionStatement
-| finalSwitchStatement
-| finally_
-| forStatement
-| foreachStatement
-| foreachType
-| foreachTypeList
-| functionAttribute
-| functionBody
-| functionCallExpression
-| functionCallStatement
-| functionDeclaration
-| functionLiteralExpression
-| gotoStatement
-| identifierChain
-| identifierList
-| identifierOrTemplateChain
-| identifierOrTemplateInstance
-| identityExpression
-| ifStatement
-| ifCondition
-| importBind
-| importBindings
-| importDeclaration
-| importExpression
-| indexExpression
-| inExpression
-| inStatement
-| initialize
-| initializer
-| interfaceDeclaration
-| invariant
-| isExpression
-| keyValuePair
-| keyValuePairs
-| labeledStatement
-| lambdaExpression
-| lastCatch
-| linkageAttribute
-| memberFunctionAttribute
-| mixinDeclaration
-| mixinExpression
-| mixinTemplateDeclaration
-| mixinTemplateName
-| moduleDeclaration
-| mulExpression
-| newAnonClassExpression
-| newExpression
-| statementNoCaseNoDefault
-| nonVoidInitializer
-| operands
-| orExpression
-| orOrExpression
-| outStatement
-| parameter
-| parameterAttribute
-| parameters
-| postblit
-| postIncDecExpression
-| powExpression
-| pragmaDeclaration
-| pragmaExpression
-| preIncDecExpression
-| primaryExpression
-| register
-| relExpression
-| relOperator
-| returnStatement
-| scopeGuardStatement
-| sharedStaticConstructor
-| sharedStaticDestructor
-| shiftExpression
-| singleImport
-| sliceExpression
-| statement
-| staticAssertDeclaration
-| staticAssertStatement
-| staticConstructor
-| staticDestructor
-| staticIfCondition
-| storageClass
-| structBody
-| structDeclaration
-| structInitializer
-| structMemberInitializer
-| structMemberInitializers
-| switchStatement
-| symbol
-| synchronizedStatement
-| templateAliasParameter
-| templateArgument
-| templateArgumentList
-| templateArguments
-| templateDeclaration
-| eponymousTemplateDeclaration
-| templateInstance
-| templateMixinExpression
-| templateParameter
-| templateParameterList
-| templateParameters
-| templateSingleArgument
-| templateThisParameter
-| templateTupleParameter
-| templateTypeParameter
-| templateValueParameter
-| templateValueParameterDefault
-| ternaryExpression
-| throwStatement
-| traitsExpression
-| tryStatement
-| type
-| type2
-| typeConstructor
-| typeConstructors
-| typeSpecialization
-| typeSuffix
-| typeidExpression
-| typeofExpression
-| unaryExpression
-| unionDeclaration
-| unittest
-| variableDeclaration
-| vector
-| versionCondition
-| versionSpecification
-| whileStatement
-| withStatement
-| xorExpression
-)
-
-
-WysiwygCharacter ::= Character | Whitespace
-
-//Identifier ::= identifier
-
-//Whitespace: [\u0020\u0009\u000b\u000c\u000a\u000d]+ -> skip;
-//fragment EndOfLine : '\u000d' | '\u000a' | '\u000d' '\u000a' | '\u2028' | '\u2029';
-
-//fragment Character: [\u0001-\uffff];
-//fragment WysiwygCharacter: Character | Whitespace;
-//fragment HexDigit: [a-fA-F0-9];
-//fragment OctalDigit: [0-7];
-//fragment BinDigit: [01];
-//fragment DecimalDigit: [0-9];
-
-//fragment BlockComment: '/*' .*? '*/';
-
-
 
 module ::=
      moduleDeclaration? declaration*
@@ -499,178 +229,178 @@ module ::=
 
  addExpression ::=
        mulExpression
-     | addExpression ('+' | '-' | '~') mulExpression
+     | addExpression (PLUS | MINUS | CONCAT) mulExpression
      ;
 
  aliasDeclaration ::=
-       'alias' aliasInitializer (',' aliasInitializer)* ';'
-     | 'alias' linkageAttribute? type Identifier ';'
+       KW_ALIAS aliasInitializer (COMMA aliasInitializer)* SEMICOLON
+     | KW_ALIAS linkageAttribute? type IDENTIFIER SEMICOLON
      ;
 
  aliasInitializer ::=
-     Identifier '=' type
+     IDENTIFIER ASSIGN type
      ;
 
  aliasThisDeclaration ::=
-     'alias' Identifier 'this' ';'
+     KW_ALIAS IDENTIFIER KW_THIS SEMICOLON
      ;
 
  alignAttribute ::=
-     'align' ('(' IntegerLiteral ')')?
+     KW_ALIGN (OPEN_PARENS GROUP_INTEGER CLOSE_PARENS)?
      ;
 
  andAndExpression ::=
        orExpression
-     | andAndExpression '&&' orExpression
+     | andAndExpression LOGICAL_AND orExpression
      ;
 
  andExpression ::=
        cmpExpression
-     | andExpression '&' cmpExpression
+     | andExpression AND cmpExpression
      ;
 
  argumentList ::=
-     assignExpression (',' assignExpression?)*
+     assignExpression (COMMA assignExpression?)*
      ;
 
  arguments ::=
-     '(' argumentList? ')'
+     OPEN_PARENS argumentList? CLOSE_PARENS
      ;
 
  arrayInitializer ::=
-       '[' ']'
-     | '[' arrayMemberInitialization (',' arrayMemberInitialization?)* ']'
+       OPEN_BRACKET CLOSE_BRACKET
+     | OPEN_BRACKET arrayMemberInitialization (COMMA arrayMemberInitialization?)* CLOSE_BRACKET
      ;
 
  arrayLiteral ::=
-     '[' argumentList? ']'
+     OPEN_BRACKET argumentList? CLOSE_BRACKET
      ;
 
  arrayMemberInitialization ::=
-     (assignExpression ':')? nonVoidInitializer
+     (assignExpression COLON)? nonVoidInitializer
      ;
 
  asmAddExp ::=
        asmMulExp
-     | asmAddExp ('+' | '-') asmMulExp
+     | asmAddExp (PLUS | MINUS) asmMulExp
      ;
 
  asmAndExp ::=
-     asmEqualExp ('&' asmEqualExp)?
+     asmEqualExp (AND asmEqualExp)?
      ;
 
  asmBrExp ::=
        asmUnaExp
-     | asmBrExp '[' asmExp ']'
+     | asmBrExp OPEN_BRACKET asmExp CLOSE_BRACKET
      ;
 
  asmEqualExp ::=
-     asmRelExp (('==' | '!=') asmRelExp)?
+     asmRelExp ((EQUALS | NOT_EQUAL) asmRelExp)?
      ;
 
  asmExp ::=
-     asmLogOrExp ('?' asmExp ':' asmExp)?
+     asmLogOrExp (QUESTION asmExp COLON asmExp)?
      ;
 
  asmInstruction ::=
-     Identifier
-     | 'align' IntegerLiteral
-     | 'align' Identifier
-     | Identifier ':' asmInstruction
-     | Identifier asmExp
-     | Identifier operands
+     IDENTIFIER
+     | KW_ALIGN GROUP_INTEGER
+     | KW_ALIGN IDENTIFIER
+     | IDENTIFIER COLON asmInstruction
+     | IDENTIFIER asmExp
+     | IDENTIFIER operands
      ;
 
  asmLogAndExp ::=
-     asmOrExp ('&&' asmOrExp)?
+     asmOrExp (LOGICAL_AND asmOrExp)?
      ;
 
  asmLogOrExp ::=
-     asmLogAndExp ('||' asmLogAndExp)?
+     asmLogAndExp (LOGICAL_OR asmLogAndExp)?
      ;
 
  asmMulExp ::=
-     asmBrExp (('*' | '/' | '%') asmBrExp)?
+     asmBrExp ((STAR | DIV | MOD) asmBrExp)?
      ;
 
  asmOrExp ::=
-     asmXorExp ('|' asmXorExp)?
+     asmXorExp (OR asmXorExp)?
      ;
 
  asmPrimaryExp ::=
-       IntegerLiteral
-     | FloatLiteral
+       GROUP_INTEGER
+     | GROUP_FLOAT
      | register
      | identifierChain
-     | '$'
+     | DOLLAR
      ;
 
  asmRelExp ::=
-     asmShiftExp (('<' | '<=' | '>' | '>=') asmShiftExp)?
+     asmShiftExp ((LESS_THAN | LESS_EQUAL | GREATER_THAN | GREATER_EQUAL) asmShiftExp)?
      ;
 
  asmShiftExp ::=
-     asmAddExp (('<<' | '>>' | '>>>') asmAddExp)?
+     asmAddExp ((LEFT_SHIFT | RIGHT_SHIFT | TRIPLE_RSHIFT) asmAddExp)?
      ;
 
  asmStatement ::=
-     'asm' '{' asmInstruction+ '}'
+     KW_ASM OPEN_BRACE asmInstruction+ CLOSE_BRACE
      ;
 
  asmTypePrefix ::=
-       Identifier Identifier
-     | 'byte' Identifier
-     | 'short' Identifier
-     | 'int' Identifier
-     | 'float' Identifier
-     | 'double' Identifier
-     | 'real' Identifier
+       IDENTIFIER IDENTIFIER
+     | KW_BYTE IDENTIFIER
+     | KW_SHORT IDENTIFIER
+     | KW_INT IDENTIFIER
+     | KW_FLOAT IDENTIFIER
+     | KW_DOUBLE IDENTIFIER
+     | KW_REAL IDENTIFIER
      ;
 
  asmUnaExp ::=
        asmTypePrefix asmExp
-     | Identifier asmExp
-     | '+' asmUnaExp
-     | '-' asmUnaExp
-     | '!' asmUnaExp
-     | '~' asmUnaExp
+     | IDENTIFIER asmExp
+     | PLUS asmUnaExp
+     | MINUS asmUnaExp
+     | NOT asmUnaExp
+     | CONCAT asmUnaExp
      | asmPrimaryExp
      ;
 
  asmXorExp ::=
-     asmAndExp ('^' asmAndExp)?
+     asmAndExp (XOR asmAndExp)?
      ;
 
  assertExpression ::=
-     'assert' '(' assignExpression (',' assignExpression)? ')'
+     KW_ASSERT OPEN_PARENS assignExpression (COMMA assignExpression)? CLOSE_PARENS
      ;
 
  assignExpression ::=
      ternaryExpression (assignOperator assignExpression)?
      ;
  assignOperator ::=
-       '='
-     | '>>>='
-     | '>>='
-     | '<<='
-     | '+='
-     | '-='
-     | '*='
-     | '%='
-     | '&='
-     | '/='
-     | '|='
-     | '^^='
-     | '^='
-     | '~='
+       ASSIGN
+     | TRIPLE_RSHIFT_ASSIGN
+     | RIGHT_SHIFT_ASSIGN
+     | LEFT_SHIFT_ASSIGN
+     | PLUS_ASSIGN
+     | MINUS_ASSIGN
+     | MULT_ASSIGN
+     | MOD_ASSIGN
+     | AND_ASSIGN
+     | DIV_ASSIGN
+     | OR_ASSIGN
+     | POW_ASSIGN
+     | XOR_ASSIGN
+     | CONCAT_ASSIGN
      ;
 
  assocArrayLiteral ::=
-     '[' keyValuePairs ']'
+     OPEN_BRACKET keyValuePairs CLOSE_BRACKET
      ;
 
  atAttribute ::=
-     '@' (Identifier | '(' argumentList ')' | functionCallExpression)
+     AT (IDENTIFIER | OPEN_PARENS argumentList CLOSE_PARENS | functionCallExpression)
      ;
 
  attribute ::=
@@ -678,91 +408,91 @@ module ::=
      | linkageAttribute
      | pragmaExpression
      | storageClass
-     | 'export'
-     | 'package'
-     | 'private'
-     | 'protected'
-     | 'public'
+     | KW_EXPORT
+     | KW_PACKAGE
+     | KW_PRIVATE
+     | KW_PROTECTED
+     | KW_PUBLIC
      ;
 
  attributeDeclaration ::=
-     attribute ':'
+     attribute COLON
      ;
 
  autoDeclaration ::=
-     storageClass Identifier '=' initializer (',' Identifier '=' initializer)* ';'
+     storageClass IDENTIFIER ASSIGN initializer (COMMA IDENTIFIER ASSIGN initializer)* SEMICOLON
      ;
 
  blockStatement ::=
-     '{' declarationsAndStatements? '}'
+     OPEN_BRACE declarationsAndStatements? CLOSE_BRACE
      ;
 
  bodyStatement ::=
-     'body' blockStatement
+     KW_BODY blockStatement
      ;
 
  breakStatement ::=
-     'break' Identifier? ';'
+     KW_BREAK IDENTIFIER? SEMICOLON
      ;
 
  baseClass ::=
-     (typeofExpression '.')? identifierOrTemplateChain
+     (typeofExpression DOT)? identifierOrTemplateChain
      ;
 
  baseClassList ::=
-     baseClass (',' baseClass)*
+     baseClass (COMMA baseClass)*
      ;
 
  builtinType ::=
-      'bool'
-    | 'byte'
-    | 'ubyte'
-    | 'short'
-    | 'ushort'
-    | 'int'
-    | 'uint'
-    | 'long'
-    | 'ulong'
-    | 'char'
-    | 'wchar'
-    | 'dchar'
-    | 'float'
-    | 'double'
-    | 'real'
-    | 'ifloat'
-    | 'idouble'
-    | 'ireal'
-    | 'cfloat'
-    | 'cdouble'
-    | 'creal'
-    | 'void'
+      KW_BOOL
+    | KW_BYTE
+    | KW_UBYTE
+    | KW_SHORT
+    | KW_USHORT
+    | KW_INT
+    | KW_UINT
+    | KW_LONG
+    | KW_ULONG
+    | KW_CHAR
+    | KW_WCHAR
+    | KW_DCHAR
+    | KW_FLOAT
+    | KW_DOUBLE
+    | KW_REAL
+    | KW_IFLOAT
+    | KW_IDOUBLE
+    | KW_IREAL
+    | KW_CFLOAT
+    | KW_CDOUBLE
+    | KW_CREAL
+    | KW_VOID
     ;
 
  caseRangeStatement ::=
-     'case' assignExpression ':' '...' 'case' assignExpression ':' declarationsAndStatements
+     KW_CASE assignExpression COLON TRIPLE_DOT KW_CASE assignExpression COLON declarationsAndStatements
      ;
 
  caseStatement ::=
-     'case' argumentList ':' declarationsAndStatements
+     KW_CASE argumentList COLON declarationsAndStatements
      ;
 
  castExpression ::=
-     'cast' '(' (type | castQualifier)? ')' unaryExpression
+     KW_CAST OPEN_PARENS (type | castQualifier)? CLOSE_PARENS unaryExpression
      ;
 
  castQualifier ::=
-      'const'
-    | 'const' 'shared'
-    | 'immutable'
-    | 'inout'
-    | 'inout' 'shared'
-    | 'shared'
-    | 'shared' 'const'
-    | 'shared' 'inout'
+      KW_CONST
+    | KW_CONST KW_SHARED
+    | KW_IMMUTABLE
+    | KW_INOUT
+    | KW_INOUT KW_SHARED
+    | KW_SHARED
+    | KW_SHARED KW_CONST
+    | KW_SHARED KW_INOUT
     ;
 
  catch_ ::=
-     'catch' '(' type Identifier? ')' declarationOrStatement
+     KW_CATCH OPEN_PARENS type IDENTIFIER? CLOSE_PARENS declarationOrStatement
      ;
 
  catches ::=
@@ -771,10 +501,10 @@ module ::=
      ;
 
  classDeclaration ::=
-       'class' Identifier (':' baseClassList)? ';'
-     | 'class' Identifier (':' baseClassList)? structBody
-     | 'class' Identifier templateParameters constraint? (':' baseClassList)? structBody
-     | 'class' Identifier templateParameters (':' baseClassList)? constraint? structBody
+       KW_CLASS IDENTIFIER (COLON baseClassList)? SEMICOLON
+     | KW_CLASS IDENTIFIER (COLON baseClassList)? structBody
+     | KW_CLASS IDENTIFIER templateParameters constraint? (COLON baseClassList)? structBody
+     | KW_CLASS IDENTIFIER templateParameters (COLON baseClassList)? constraint? structBody
      ;
 
  cmpExpression ::=
@@ -793,32 +523,32 @@ module ::=
 
  conditionalDeclaration ::=
        compileCondition declaration
-     | compileCondition ':' declaration+
-     | compileCondition declaration ('else' declaration)?
+     | compileCondition COLON declaration+
+     | compileCondition declaration (KW_ELSE declaration)?
      ;
 
  conditionalStatement ::=
-     compileCondition declarationOrStatement ('else' declarationOrStatement)?
+     compileCondition declarationOrStatement (KW_ELSE declarationOrStatement)?
      ;
 
  constraint ::=
-     'if' '(' expression ')'
+     KW_IF OPEN_PARENS expression CLOSE_PARENS
      ;
 
  constructor ::=
-       'this' templateParameters parameters memberFunctionAttribute* constraint? (functionBody | ';')
+       KW_THIS templateParameters parameters memberFunctionAttribute* constraint? (functionBody | SEMICOLON)
      ;
 
  continueStatement ::=
-     'continue' Identifier? ';'
+     KW_CONTINUE IDENTIFIER? SEMICOLON
      ;
 
  debugCondition ::=
-     'debug' ('(' (IntegerLiteral | Identifier) ')')?
+     KW_DEBUG (OPEN_PARENS (GROUP_INTEGER | IDENTIFIER) CLOSE_PARENS)?
      ;
 
  debugSpecification ::=
-     'debug' '=' (Identifier | IntegerLiteral) ';'
+     KW_DEBUG ASSIGN (IDENTIFIER | GROUP_INTEGER) SEMICOLON
      ;
 
 declaration ::=
@@ -850,7 +580,7 @@ declaration2 ::=
    | variableDeclaration
    | attributeDeclaration
    | invariant
-   | '{' declaration+ '}'
+   | OPEN_BRACE declaration+ CLOSE_BRACE
    ;
 
  declarationsAndStatements ::=
@@ -863,84 +593,84 @@ declaration2 ::=
      ;
 
  declarator ::=
-     Identifier ('=' initializer)?
+     IDENTIFIER (ASSIGN initializer)?
      ;
 
  defaultStatement ::=
-     'default' ' ::=' declarationsAndStatements
+     KW_DEFAULT COLON declarationsAndStatements
      ;
 
  deleteExpression ::=
-     'delete' unaryExpression
+     KW_DELETE unaryExpression
      ;
 
  deprecated ::=
-     'deprecated' ('(' assignExpression ')')?
+     KW_DEPRECATED (OPEN_PARENS assignExpression CLOSE_PARENS)?
      ;
 
  destructor ::=
-     '~' 'this' '(' ')' memberFunctionAttribute* (functionBody | ';')
+     CONCAT KW_THIS OPEN_PARENS CLOSE_PARENS memberFunctionAttribute* (functionBody | SEMICOLON)
      ;
 
  doStatement ::=
-     'do' statementNoCaseNoDefault 'while' '(' expression ')' ';'
+     KW_DO statementNoCaseNoDefault KW_WHILE OPEN_PARENS expression CLOSE_PARENS SEMICOLON
      ;
 
  enumBody ::=
-       ';'
-     | '{' enumMember (',' enumMember?)* '}'
+       SEMICOLON
+     | OPEN_BRACE enumMember (COMMA enumMember?)* CLOSE_BRACE
      ;
 
  enumDeclaration ::=
-     'enum' Identifier? (':' type)? enumBody
+     KW_ENUM IDENTIFIER? (COLON type)? enumBody
      ;
 
  enumMember ::=
-       Identifier
-     | (Identifier | type) '=' assignExpression
+       IDENTIFIER
+     | (IDENTIFIER | type) ASSIGN assignExpression
      ;
 
  equalExpression ::=
-     shiftExpression ('==' | '!=') shiftExpression
+     shiftExpression (EQUALS | NOT_EQUAL) shiftExpression
      ;
 
  expression ::=
-     assignExpression (',' assignExpression)*
+     assignExpression (COMMA assignExpression)*
      ;
 
  expressionStatement ::=
-     expression ';'
+     expression SEMICOLON
      ;
 
  finalSwitchStatement ::=
-     'final' switchStatement
+     KW_FINAL switchStatement
      ;
 
  finally_ ::=
-     'finally' declarationOrStatement
+     KW_FINALLY declarationOrStatement
      ;
 
  forStatement ::=
-     'for' '(' declarationOrStatement expression? ';' expression? ')' declarationOrStatement
+     KW_FOR OPEN_PARENS declarationOrStatement expression? SEMICOLON expression? CLOSE_PARENS declarationOrStatement
      ;
 
  foreachStatement ::=
-       ('foreach' | 'foreach_reverse') '(' foreachTypeList ';' expression ')' declarationOrStatement
-     | ('foreach' | 'foreach_reverse') '(' foreachType ';' expression '..' expression ')' declarationOrStatement
+       (KW_FOREACH | KW_FOREACH_REVERSE) OPEN_PARENS foreachTypeList SEMICOLON expression CLOSE_PARENS declarationOrStatement
+     | (KW_FOREACH | KW_FOREACH_REVERSE) OPEN_PARENS foreachType SEMICOLON expression DOUBLE_DOT expression CLOSE_PARENS declarationOrStatement
      ;
 
  foreachType ::=
-     typeConstructors? type? Identifier
+     typeConstructors? type? IDENTIFIER
      ;
 
  foreachTypeList ::=
-     foreachType (',' foreachType)*
+     foreachType (COMMA foreachType)*
      ;
 
  functionAttribute ::=
        atAttribute
-     | 'pure'
-     | 'nothrow'
+     | KW_PURE
+     | KW_NOTHROW
      ;
 
  functionBody ::=
@@ -954,172 +684,172 @@ declaration2 ::=
      ;
 
  functionCallStatement ::=
-     functionCallExpression ';'
+     functionCallExpression SEMICOLON
      ;
 
  functionDeclaration ::=
-       (storageClass | type) Identifier templateParameters? parameters memberFunctionAttribute* constraint? (functionBody | ';')
+       (storageClass | type) IDENTIFIER templateParameters? parameters memberFunctionAttribute* constraint? (functionBody | SEMICOLON)
      ;
 
  functionLiteralExpression ::=
-     (('function' | 'delegate') type?)? (parameters functionAttribute*)? functionBody
+     ((KW_FUNCTION | KW_DELEGATE) type?)? (parameters functionAttribute*)? functionBody
      ;
 
  gotoStatement ::=
-     'goto' (Identifier | 'default' | 'case' expression?) ';'
+     KW_GOTO (IDENTIFIER | KW_DEFAULT | KW_CASE expression?) SEMICOLON
      ;
 
  identifierChain ::=
-     Identifier ('.' Identifier)*
+     IDENTIFIER (DOT IDENTIFIER)*
      ;
 
  identifierList ::=
-     Identifier (',' Identifier)*
+     IDENTIFIER (COMMA IDENTIFIER)*
      ;
 
  identifierOrTemplateChain ::=
-     identifierOrTemplateInstance ('.' identifierOrTemplateInstance)*
+     identifierOrTemplateInstance (DOT identifierOrTemplateInstance)*
      ;
 
  identifierOrTemplateInstance ::=
-       Identifier
+       IDENTIFIER
      | templateInstance
      ;
 
  identityExpression ::=
-     shiftExpression ('is' | '!' 'is') shiftExpression
+     shiftExpression (KW_IS | NOT KW_IS) shiftExpression
      ;
 
  ifStatement ::=
-     'if' '(' ifCondition ')' declarationOrStatement ('else' declarationOrStatement)?
+     KW_IF OPEN_PARENS ifCondition CLOSE_PARENS declarationOrStatement (KW_ELSE declarationOrStatement)?
     ;
 
 ifCondition ::=
-       'auto' Identifier '=' expression
-     | type Identifier '=' expression
+       KW_AUTO IDENTIFIER ASSIGN expression
+     | type IDENTIFIER ASSIGN expression
      | expression
      ;
 
  importBind ::=
-     Identifier ('=' Identifier)?
+     IDENTIFIER (ASSIGN IDENTIFIER)?
      ;
 
  importBindings ::=
-     singleImport ':' importBind (',' importBind)*
+     singleImport COLON importBind (COMMA importBind)*
      ;
 
  importDeclaration ::=
-       'import' singleImport (',' singleImport)* (',' importBindings)? ';'
-     | 'import' importBindings ';'
+       KW_IMPORT singleImport (COMMA singleImport)* (COMMA importBindings)? SEMICOLON
+     | KW_IMPORT importBindings SEMICOLON
      ;
 
  importExpression ::=
-     'import' '(' assignExpression ')'
+     KW_IMPORT OPEN_PARENS assignExpression CLOSE_PARENS
      ;
 
  indexExpression ::=
-     unaryExpression '[' argumentList ']'
+     unaryExpression OPEN_BRACKET argumentList CLOSE_BRACKET
      ;
 
  inExpression ::=
-     shiftExpression ('in' | '!' 'in') shiftExpression
+     shiftExpression (KW_IN | NOT KW_IN) shiftExpression
      ;
 
  inStatement ::=
-     'in' blockStatement
+     KW_IN blockStatement
      ;
 
  initialize ::=
-       ';'
+       SEMICOLON
      | statementNoCaseNoDefault
      ;
 
  initializer ::=
-       'void'
+       KW_VOID
      | nonVoidInitializer
      ;
 
  interfaceDeclaration ::=
-     'interface' Identifier (';' | (templateParameters constraint?)? (':' baseClassList)? structBody)
+     KW_INTERFACE IDENTIFIER (SEMICOLON | (templateParameters constraint?)? (COLON baseClassList)? structBody)
      ;
 
  invariant ::=
-     'invariant' ('(' ')')? blockStatement
+     KW_INVARIANT (OPEN_PARENS CLOSE_PARENS)? blockStatement
      ;
 
  isExpression ::=
-     'is' '(' type Identifier? ((':' | '==') typeSpecialization (',' templateParameterList)?)? ')'
+     KW_IS OPEN_PARENS type IDENTIFIER? ((COLON | EQUALS) typeSpecialization (COMMA templateParameterList)?)? CLOSE_PARENS
      ;
 
  keyValuePair ::=
-     assignExpression ':' assignExpression
+     assignExpression COLON assignExpression
      ;
 
  keyValuePairs ::=
-     keyValuePair (',' keyValuePair)* ','?
+     keyValuePair (COMMA keyValuePair)* COMMA?
      ;
 
  labeledStatement ::=
-     Identifier ':' declarationOrStatement
+     IDENTIFIER COLON declarationOrStatement
      ;
 
  lambdaExpression ::=
-       Identifier '=>' assignExpression
-     | 'function' parameters functionAttribute* '=>' assignExpression
-     | 'delegate' parameters functionAttribute* '=>' assignExpression
-     | parameters functionAttribute* '=>' assignExpression
+       IDENTIFIER LAMBDA assignExpression
+     | KW_FUNCTION parameters functionAttribute* LAMBDA assignExpression
+     | KW_DELEGATE parameters functionAttribute* LAMBDA assignExpression
+     | parameters functionAttribute* LAMBDA assignExpression
      ;
 
  lastCatch ::=
-     'catch' statementNoCaseNoDefault
+     KW_CATCH statementNoCaseNoDefault
      ;
 
  linkageAttribute ::=
-     'extern' '(' Identifier ('++' (',' identifierChain)?)? ')'
+     KW_EXTERN OPEN_PARENS IDENTIFIER (INCREMENT (COMMA identifierChain)?)? CLOSE_PARENS
      ;
 
  memberFunctionAttribute ::=
        functionAttribute
-     | 'immutable'
-     | 'inout'
-     | 'shared'
-     | 'const'
+     | KW_IMMUTABLE
+     | KW_INOUT
+     | KW_SHARED
+     | KW_CONST
      ;
 
  mixinDeclaration ::=
-       mixinExpression ';'
-     | templateMixinExpression ';'
+       mixinExpression SEMICOLON
+     | templateMixinExpression SEMICOLON
      ;
 
  mixinExpression ::=
-     'mixin' '(' assignExpression ')'
+     KW_MIXIN OPEN_PARENS assignExpression CLOSE_PARENS
      ;
 
  mixinTemplateDeclaration ::=
-     'mixin' templateDeclaration
+     KW_MIXIN templateDeclaration
      ;
 
  mixinTemplateName ::=
        symbol
-     | typeofExpression '.' identifierOrTemplateChain
+     | typeofExpression DOT identifierOrTemplateChain
      ;
 
 
  moduleDeclaration ::=
-     'module' identifierChain ';'
+     KW_MODULE identifierChain SEMICOLON
      ;
 
  mulExpression ::=
        powExpression
-     | mulExpression ('*' | '/' | '%') powExpression
+     | mulExpression (STAR | DIV | MOD) powExpression
      ;
 
  newAnonClassExpression ::=
-     'new' arguments? 'class' arguments? baseClassList? structBody
+     KW_NEW arguments? KW_CLASS arguments? baseClassList? structBody
      ;
 
  newExpression ::=
-       'new' type ('[' assignExpression ']' | arguments)?
+       KW_NEW type (OPEN_BRACKET assignExpression CLOSE_BRACKET | arguments)?
      | newAnonClassExpression
      ;
 
@@ -1163,105 +893,105 @@ ifCondition ::=
 
  orExpression ::=
        xorExpression
-     | orExpression '|' xorExpression
+     | orExpression OR xorExpression
      ;
 
  orOrExpression ::=
        andAndExpression
-     | orOrExpression '||' andAndExpression
+     | orOrExpression LOGICAL_OR andAndExpression
      ;
 
  outStatement ::=
-     'out' ('(' Identifier ')')? blockStatement
+     KW_OUT (OPEN_PARENS IDENTIFIER CLOSE_PARENS)? blockStatement
      ;
 
  parameter ::=
-     parameterAttribute* type (Identifier? '...' | (Identifier? ('=' assignExpression)?))?
+     parameterAttribute* type (IDENTIFIER? TRIPLE_DOT | (IDENTIFIER? (ASSIGN assignExpression)?))?
      ;
 
  parameterAttribute ::=
        typeConstructor
-     | 'final'
-     | 'in'
-     | 'lazy'
-     | 'out'
-     | 'ref'
-     | 'scope'
-     | 'auto'
+     | KW_FINAL
+     | KW_IN
+     | KW_LAZY
+     | KW_OUT
+     | KW_REF
+     | KW_SCOPE
+     | KW_AUTO
      ;
 
  parameters ::=
-       '(' parameter (',' parameter)* (',' '...')? ')'
-     | '(' '...' ')'
-     | '(' ')'
+       OPEN_PARENS parameter (COMMA parameter)* (COMMA TRIPLE_DOT)? CLOSE_PARENS
+     | OPEN_PARENS TRIPLE_DOT CLOSE_PARENS
+     | OPEN_PARENS CLOSE_PARENS
      ;
 
  postblit ::=
-     'this' '(' 'this' ')' memberFunctionAttribute* (functionBody | ';')
+     KW_THIS OPEN_PARENS KW_THIS CLOSE_PARENS memberFunctionAttribute* (functionBody | SEMICOLON)
      ;
 
  postIncDecExpression ::=
-     unaryExpression ('++' | '--')
+     unaryExpression (INCREMENT | DECREMENT)
      ;
 
  powExpression ::=
        unaryExpression
-     | powExpression '^^' unaryExpression
+     | powExpression POW unaryExpression
      ;
 
  pragmaDeclaration ::=
-     pragmaExpression ';'
+     pragmaExpression SEMICOLON
      ;
 
  pragmaExpression ::=
-     'pragma' '(' Identifier (',' argumentList)? ')'
+     KW_PRAGMA OPEN_PARENS IDENTIFIER (COMMA argumentList)? CLOSE_PARENS
      ;
 
  preIncDecExpression ::=
-     ('++' | '--') unaryExpression
+     (INCREMENT | DECREMENT) unaryExpression
      ;
 
  primaryExpression ::=
        identifierOrTemplateInstance
-     | '.' identifierOrTemplateInstance
-     | builtinType '.' Identifier
+     | DOT identifierOrTemplateInstance
+     | builtinType DOT IDENTIFIER
      | typeofExpression
      | typeidExpression
      | vector
      | arrayLiteral
      | assocArrayLiteral
-     | '(' expression ')'
+     | OPEN_PARENS expression CLOSE_PARENS
      | isExpression
      | lambdaExpression
      | functionLiteralExpression
      | traitsExpression
      | mixinExpression
      | importExpression
-     | '$'
-     | 'this'
-     | 'super'
-     | 'null'
-     | 'true'
-     | 'false'
-     | '__DATE__'
-     | '__TIME__'
-     | '__TIMESTAMP__'
-     | '__VENDOR__'
-     | '__VERSION__'
-     | '__FILE__'
-     | '__LINE__'
-     | '__MODULE__'
-     | '__FUNCTION__'
-     | '__PRETTY_FUNCTION__'
-     | IntegerLiteral
-     | FloatLiteral
-     | StringLiteral+
-     | CharacterLiteral
+     | DOLLAR
+     | KW_THIS
+     | KW_SUPER
+     | KW_NULL
+     | KW_TRUE
+     | KW_FALSE
+     | KW___DATE__
+     | KW___TIME__
+     | KW___TIMESTAMP__
+     | KW___VENDOR__
+     | KW___VERSION__
+     | KW___FILE__
+     | KW___LINE__
+     | KW___MODULE__
+     | KW___FUNCTION__
+     | KW___PRETTY_FUNCTION__
+     | GROUP_INTEGER
+     | GROUP_FLOAT
+     | GROUP_STRING+
+     | CHARACTER
      ;
 
  register ::=
-     Identifier
-     | Identifier '(' IntegerLiteral ')'
+     IDENTIFIER
+     | IDENTIFIER OPEN_PARENS GROUP_INTEGER CLOSE_PARENS
      ;
 
  relExpression ::=
@@ -1269,48 +999,48 @@ ifCondition ::=
      | relExpression relOperator shiftExpression
      ;
  relOperator ::=
-       '<'
-     | '<='
-     | '>'
-     | '>='
-     | '!<>='
-     | '!<>'
-     | '<>'
-     | '<>='
-     | '!>'
-     | '!>='
-     | '!<'
-     | '!<='
+       LESS_THAN
+     | LESS_EQUAL
+     | GREATER_THAN
+     | GREATER_EQUAL
+     | UNORDERED
+     | UNORDERED_E
+     | LESS_GREATER
+     | LESS_GREATER_EQUAL
+     | UNORDERED_LE
+     | UNORDERED_L
+     | UNORDERED_GE
+     | UNORDERED_G
      ;
 
  returnStatement ::=
-     'return' expression? ';'
+     KW_RETURN expression? SEMICOLON
      ;
 
  scopeGuardStatement ::=
-     'scope' '(' Identifier ')' statementNoCaseNoDefault
+     KW_SCOPE OPEN_PARENS IDENTIFIER CLOSE_PARENS statementNoCaseNoDefault
      ;
 
  sharedStaticConstructor ::=
-     'shared' 'static' 'this' '(' ')' functionBody
+     KW_SHARED KW_STATIC KW_THIS OPEN_PARENS CLOSE_PARENS functionBody
      ;
 
  sharedStaticDestructor ::=
-     'shared' 'static' '~' 'this' '(' ')' functionBody
+     KW_SHARED KW_STATIC CONCAT KW_THIS OPEN_PARENS CLOSE_PARENS functionBody
      ;
 
  shiftExpression ::=
        addExpression
-     | shiftExpression ('<<' | '>>' | '>>>') addExpression
+     | shiftExpression (LEFT_SHIFT | RIGHT_SHIFT | TRIPLE_RSHIFT) addExpression
      ;
 
  singleImport ::=
-     (Identifier '=')? identifierChain
+     (IDENTIFIER ASSIGN)? identifierChain
      ;
 
  sliceExpression ::=
-       unaryExpression '[' assignExpression '..' assignExpression ']'
-     | unaryExpression '[' ']'
+       unaryExpression OPEN_BRACKET assignExpression DOUBLE_DOT assignExpression CLOSE_BRACKET
+     | unaryExpression OPEN_BRACKET CLOSE_BRACKET
      ;
 
  statement ::=
@@ -1325,74 +1055,74 @@ ifCondition ::=
      ;
 
  staticAssertStatement ::=
-     'static' assertExpression ';'
+     KW_STATIC assertExpression SEMICOLON
      ;
 
  staticConstructor ::=
-     'static' 'this' '(' ')' functionBody
+     KW_STATIC KW_THIS OPEN_PARENS CLOSE_PARENS functionBody
      ;
 
  staticDestructor ::=
-     'static' '~' 'this' '(' ')' functionBody
+     KW_STATIC CONCAT KW_THIS OPEN_PARENS CLOSE_PARENS functionBody
      ;
 
  staticIfCondition ::=
-     'static' 'if' '(' assignExpression ')'
+     KW_STATIC KW_IF OPEN_PARENS assignExpression CLOSE_PARENS
      ;
 
  storageClass ::=
        atAttribute
      | typeConstructor
      | deprecated
-     | 'abstract'
-     | 'auto'
-     | 'enum'
-     | 'extern'
-     | 'final'
-     | 'nothrow'
-     | 'override'
-     | 'pure'
-     | 'ref'
-     | '__gshared'
-     | 'scope'
-     | 'static'
-     | 'synchronized'
+     | KW_ABSTRACT
+     | KW_AUTO
+     | KW_ENUM
+     | KW_EXTERN
+     | KW_FINAL
+     | KW_NOTHROW
+     | KW_OVERRIDE
+     | KW_PURE
+     | KW_REF
+     | KW___GSHARED
+     | KW_SCOPE
+     | KW_STATIC
+     | KW_SYNCHRONIZED
      ;
 
  structBody ::=
-     '{' declaration* '}'
+     OPEN_BRACE declaration* CLOSE_BRACE
      ;
 
  structDeclaration ::=
-     'struct' Identifier? (templateParameters constraint? structBody | (structBody | ';'))
+     KW_STRUCT IDENTIFIER? (templateParameters constraint? structBody | (structBody | SEMICOLON))
      ;
 
  structInitializer ::=
-     '{' structMemberInitializers? '}'
+     OPEN_BRACE structMemberInitializers? CLOSE_BRACE
      ;
 
  structMemberInitializer ::=
-     (Identifier ':')? nonVoidInitializer
+     (IDENTIFIER COLON)? nonVoidInitializer
      ;
 
  structMemberInitializers ::=
-     structMemberInitializer (',' structMemberInitializer?)*
+     structMemberInitializer (COMMA structMemberInitializer?)*
      ;
 
  switchStatement ::=
-     'switch' '(' expression ')' statement
+     KW_SWITCH OPEN_PARENS expression CLOSE_PARENS statement
      ;
 
  symbol ::=
-     '.'? identifierOrTemplateChain
+     DOT? identifierOrTemplateChain
      ;
 
  synchronizedStatement ::=
-     'synchronized' ('(' expression ')')? statementNoCaseNoDefault
+     KW_SYNCHRONIZED (OPEN_PARENS expression CLOSE_PARENS)? statementNoCaseNoDefault
      ;
 
  templateAliasParameter ::=
-     'alias' type? Identifier (' ::=' (type | assignExpression))? ('=' (type | assignExpression))?
+     KW_ALIAS type? IDENTIFIER (COLON (type | assignExpression))? (ASSIGN (type | assignExpression))?
      ;
 
  templateArgument ::=
@@ -1401,28 +1131,28 @@ ifCondition ::=
      ;
 
  templateArgumentList ::=
-     templateArgument (',' templateArgument?)*
+     templateArgument (COMMA templateArgument?)*
      ;
 
  templateArguments ::=
-     '!' ('(' templateArgumentList? ')' | templateSingleArgument)
+     NOT (OPEN_PARENS templateArgumentList? CLOSE_PARENS | templateSingleArgument)
      ;
 
  templateDeclaration ::=
-       'template' Identifier templateParameters constraint? '{' declaration* '}'
+       KW_TEMPLATE IDENTIFIER templateParameters constraint? OPEN_BRACE declaration* CLOSE_BRACE
      | eponymousTemplateDeclaration
      ;
 
  eponymousTemplateDeclaration ::=
-     'enum' Identifier templateParameters '=' assignExpression ';'
+     KW_ENUM IDENTIFIER templateParameters ASSIGN assignExpression SEMICOLON
      ;
 
  templateInstance ::=
-     Identifier templateArguments
+     IDENTIFIER templateArguments
      ;
 
  templateMixinExpression ::=
-     'mixin' mixinTemplateName templateArguments? Identifier?
+     KW_MIXIN mixinTemplateName templateArguments? IDENTIFIER?
      ;
 
  templateParameter ::=
@@ -1434,70 +1164,70 @@ ifCondition ::=
      ;
 
  templateParameterList ::=
-     templateParameter (',' templateParameter?)*
+     templateParameter (COMMA templateParameter?)*
      ;
 
  templateParameters ::=
-     '(' templateParameterList? ')'
+     OPEN_PARENS templateParameterList? CLOSE_PARENS
      ;
 
  templateSingleArgument ::=
        builtinType
-     | Identifier
-     | CharacterLiteral
-     | StringLiteral
-     | IntegerLiteral
-     | FloatLiteral
-     | 'true'
-     | 'false'
-     | 'null'
-     | 'this'
-     | '__DATE__'
-     | '__TIME__'
-     | '__TIMESTAMP__'
-     | '__VENDOR__'
-     | '__VERSION__'
-     | '__FILE__'
-     | '__LINE__'
-     | '__MODULE__'
-     | '__FUNCTION__'
-     | '__PRETTY_FUNCTION__'
+     | IDENTIFIER
+     | CHARACTER
+     | GROUP_STRING
+     | GROUP_INTEGER
+     | GROUP_FLOAT
+     | KW_TRUE
+     | KW_FALSE
+     | KW_NULL
+     | KW_THIS
+     | KW___DATE__
+     | KW___TIME__
+     | KW___TIMESTAMP__
+     | KW___VENDOR__
+     | KW___VERSION__
+     | KW___FILE__
+     | KW___LINE__
+     | KW___MODULE__
+     | KW___FUNCTION__
+     | KW___PRETTY_FUNCTION__
      ;
 
  templateThisParameter ::=
-     'this' templateTypeParameter
+     KW_THIS templateTypeParameter
      ;
 
  templateTupleParameter ::=
-     Identifier '...'
+     IDENTIFIER TRIPLE_DOT
      ;
 
  templateTypeParameter ::=
-     Identifier (':' type)? ('=' type)?
+     IDENTIFIER (COLON type)? (ASSIGN type)?
      ;
 
  templateValueParameter ::=
-     type Identifier (':' expression)? templateValueParameterDefault?
+     type IDENTIFIER (COLON expression)? templateValueParameterDefault?
      ;
 
  templateValueParameterDefault ::=
-     '=' ('__FILE__' | '__MODULE__' | '__LINE__' | '__FUNCTION__' | '__PRETTY_FUNCTION__' | assignExpression)
+     ASSIGN (KW___FILE__ | KW___MODULE__ | KW___LINE__ | KW___FUNCTION__ | KW___PRETTY_FUNCTION__ | assignExpression)
      ;
 
  ternaryExpression ::=
-     orOrExpression ('?' expression ':' ternaryExpression)?
+     orOrExpression (QUESTION expression COLON ternaryExpression)?
      ;
 
  throwStatement ::=
-     'throw' expression ';'
+     KW_THROW expression SEMICOLON
      ;
 
  traitsExpression ::=
-     '__traits' '(' Identifier ',' TemplateArgumentList ')'
+     KW___TRAITS OPEN_PARENS IDENTIFIER COMMA templateArgumentList CLOSE_PARENS
      ;
 
  tryStatement ::=
-     'try' declarationOrStatement ((catches finally_?) | finally_)
+     KW_TRY declarationOrStatement ((catches finally_?) | finally_)
      ;
 
  type ::=
@@ -1507,16 +1237,16 @@ ifCondition ::=
  type2 ::=
        builtinType
      | symbol
-     | typeofExpression ('.' identifierOrTemplateChain)?
-     | typeConstructor '(' type ')'
+     | typeofExpression (DOT identifierOrTemplateChain)?
+     | typeConstructor OPEN_PARENS type CLOSE_PARENS
      ;
 
  typeConstructor ::=
-       'const'
-     | 'immutable'
-     | 'inout'
-     | 'shared'
-     | 'scope'
+       KW_CONST
+     | KW_IMMUTABLE
+     | KW_INOUT
+     | KW_SHARED
+     | KW_SCOPE
      ;
 
  typeConstructors ::=
@@ -1525,102 +1255,101 @@ ifCondition ::=
 
  typeSpecialization ::=
        type
-     | 'struct'
-     | 'union'
-     | 'class'
-     | 'interface'
-     | 'enum'
-     | 'function'
-     | 'delegate'
-     | 'super'
-     | 'const'
-     | 'immutable'
-     | 'inout'
-     | 'shared'
-     | 'return'
-     | 'typedef'
-     | '__parameters'
+     | KW_STRUCT
+     | KW_UNION
+     | KW_CLASS
+     | KW_INTERFACE
+     | KW_ENUM
+     | KW_FUNCTION
+     | KW_DELEGATE
+     | KW_SUPER
+     | KW_CONST
+     | KW_IMMUTABLE
+     | KW_INOUT
+     | KW_SHARED
+     | KW_RETURN
+     | KW_TYPEDEF
      ;
 
  typeSuffix ::=
-       '*'
-     | '[' type? ']'
-     | '[' assignExpression ']'
-     | '[' assignExpression '..'  assignExpression ']'
-     | ('delegate' | 'function') parameters memberFunctionAttribute*
+       STAR
+     | OPEN_BRACKET type? CLOSE_BRACKET
+     | OPEN_BRACKET assignExpression CLOSE_BRACKET
+     | OPEN_BRACKET assignExpression DOUBLE_DOT  assignExpression CLOSE_BRACKET
+     | (KW_DELEGATE | KW_FUNCTION) parameters memberFunctionAttribute*
      ;
 
  typeidExpression ::=
-     'typeid' '(' (type | expression) ')'
+     KW_TYPEID OPEN_PARENS (type | expression) CLOSE_PARENS
      ;
 
  typeofExpression ::=
-     'typeof' '(' (expression | 'return') ')'
+     KW_TYPEOF OPEN_PARENS (expression | KW_RETURN) CLOSE_PARENS
      ;
 
 unaryExpression ::=
       primaryExpression
-    | '&' unaryExpression
-    | '!' unaryExpression
-    | '*' unaryExpression
-    | '+' unaryExpression
-    | '-' unaryExpression
-    | '~' unaryExpression
-    | '++' unaryExpression
-    | '--' unaryExpression
+    | AND unaryExpression
+    | NOT unaryExpression
+    | STAR unaryExpression
+    | PLUS unaryExpression
+    | MINUS unaryExpression
+    | CONCAT unaryExpression
+    | INCREMENT unaryExpression
+    | DECREMENT unaryExpression
     | unaryExpression templateArguments? arguments
-    | unaryExpression '[' assignExpression '..' assignExpression ']'
-    | unaryExpression '[' ']'
-    | unaryExpression '[' argumentList ']'
+    | unaryExpression OPEN_BRACKET assignExpression DOUBLE_DOT assignExpression CLOSE_BRACKET
+    | unaryExpression OPEN_BRACKET CLOSE_BRACKET
+    | unaryExpression OPEN_BRACKET argumentList CLOSE_BRACKET
     | newExpression
     | deleteExpression
     | castExpression
     | assertExpression
-    | '(' type ')' '.' identifierOrTemplateInstance
-    | unaryExpression '.' identifierOrTemplateInstance
-    | unaryExpression '--'
-    | unaryExpression '++'
+    | OPEN_PARENS type CLOSE_PARENS DOT identifierOrTemplateInstance
+    | unaryExpression DOT identifierOrTemplateInstance
+    | unaryExpression DECREMENT
+    | unaryExpression INCREMENT
     ;
 
  unionDeclaration ::=
-       'union' Identifier templateParameters constraint? structBody
-     | 'union' Identifier (structBody | ';')
-     | 'union' structBody
+       KW_UNION IDENTIFIER templateParameters constraint? structBody
+     | KW_UNION IDENTIFIER (structBody | SEMICOLON)
+     | KW_UNION structBody
      ;
 
  unittest ::=
-     'unittest' blockStatement
+     KW_UNITTEST blockStatement
      ;
 
  variableDeclaration ::=
-       type declarator (',' declarator)* ';'
-     | type declarator '=' functionBody
+       type declarator (COMMA declarator)* SEMICOLON
+     | type declarator ASSIGN functionBody
      | autoDeclaration
      ;
 
  vector ::=
-     '__vector' '(' type ')'
+     KW___VECTOR OPEN_PARENS type CLOSE_PARENS
      ;
 
  versionCondition ::=
-     'version' '(' (IntegerLiteral | Identifier | 'unittest' | 'assert') ')'
+     KW_VERSION OPEN_PARENS (GROUP_INTEGER | IDENTIFIER | KW_UNITTEST | KW_ASSERT) CLOSE_PARENS
      ;
 
  versionSpecification ::=
-     'version' '=' (Identifier | IntegerLiteral) ';'
+     KW_VERSION ASSIGN (IDENTIFIER | GROUP_INTEGER) SEMICOLON
      ;
 
  whileStatement ::=
-     'while' '(' expression ')' declarationOrStatement
+     KW_WHILE OPEN_PARENS expression CLOSE_PARENS declarationOrStatement
      ;
 
  withStatement ::=
-     'with' '(' expression ')' statementNoCaseNoDefault
+     KW_WITH OPEN_PARENS expression CLOSE_PARENS statementNoCaseNoDefault
      ;
 
  xorExpression ::=
        andExpression
-     | xorExpression '^' andExpression
+     | xorExpression XOR andExpression
      ;
 
 
