@@ -13,9 +13,7 @@ import com.intellij.psi.tree.TokenSet;
 import net.masterthought.dlanguage.DLanguage;
 import net.masterthought.dlanguage.lexer.DLexer;
 import net.masterthought.dlanguage.psi.DLanguageFile;
-import net.masterthought.dlanguage.psi.DLanguageTokenType;
-import net.masterthought.dlanguage.psi.ElementTypes;
-import net.masterthought.dlanguage.psi.interfaces.DElementTypes2;
+import net.masterthought.dlanguage.psi.DLanguageTypes;
 import org.jetbrains.annotations.NotNull;
 
 public class DLanguageParserDefinition implements ParserDefinition {
@@ -30,7 +28,7 @@ public class DLanguageParserDefinition implements ParserDefinition {
 
     @Override
     public PsiParser createParser(final Project project) {
-        return new DParser2();
+        return new DLanguageParser();
     }
 
     @Override
@@ -41,19 +39,19 @@ public class DLanguageParserDefinition implements ParserDefinition {
     @NotNull
     @Override
     public TokenSet getWhitespaceTokens() {
-        return DLanguageTokenType.WHITESPACES;
+        return TokenSet.create(DLanguageTypes.WHITESPACE);
     }
 
     @NotNull
     @Override
     public TokenSet getCommentTokens() {
-        return DLanguageTokenType.COMMENTS;
+        return TokenSet.create(DLanguageTypes.GROUP_COMMENT);
     }
 
     @NotNull
     @Override
     public TokenSet getStringLiteralElements() {
-        return DLanguageTokenType.STRING_LITERALS;
+        return TokenSet.create(DLanguageTypes.GROUP_STRING);
     }
 
     @NotNull
@@ -61,7 +59,7 @@ public class DLanguageParserDefinition implements ParserDefinition {
     public PsiElement createElement(final ASTNode node) {
 //        PsiElement ret = ElementTypes.Factory.createElement(node);
 //        return ret;
-        return DElementTypes2.Factory.createElement(node);
+        return DLanguageTypes.Factory.createElement(node);
     }
 
     @Override

@@ -3,6 +3,8 @@ package net.masterthought.dlanguage.psi;
 import com.intellij.psi.tree.IElementType;
 import ddt.dtool.parser.DeeTokens;
 import net.masterthought.dlanguage.DLanguage;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
 
 /**
@@ -12,21 +14,26 @@ import net.masterthought.dlanguage.DLanguage;
  *
  * TODO: subclass for keyword tokens, ala com.intellij.psi.tree.IKeywordElementType?
  */
+//public class DLanguageElementType extends IElementType {
+//
+//    private final DeeTokens type;
+//
+//    public DLanguageElementType(final DeeTokens type) {
+//        super(type.name(), DLanguage.INSTANCE);
+//
+//        this.type = type;
+//    }
+//
+//    /**
+//     * @return ParserD TokenType of this element
+//     */
+//    public DeeTokens getType() {
+//        return type;
+//    }
+//
+//}
 public class DLanguageElementType extends IElementType {
-
-    private final DeeTokens type;
-
-    public DLanguageElementType(final DeeTokens type) {
-        super(type.name(), DLanguage.INSTANCE);
-
-        this.type = type;
+    public DLanguageElementType(@NotNull @NonNls String debugName) {
+        super(debugName, DLanguage.INSTANCE);
     }
-
-    /**
-     * @return ParserD TokenType of this element
-     */
-    public DeeTokens getType() {
-        return type;
-    }
-
 }

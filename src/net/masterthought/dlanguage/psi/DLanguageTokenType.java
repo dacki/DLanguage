@@ -2,11 +2,20 @@ package net.masterthought.dlanguage.psi;
 
 
 import com.intellij.psi.tree.IElementType;
-import com.intellij.psi.tree.TokenSet;
-import ddt.dtool.parser.DeeTokens;
+import net.masterthought.dlanguage.DLanguage;
+import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.HashMap;
-import java.util.Map;
+public class DLanguageTokenType extends IElementType {
+    public DLanguageTokenType(@NotNull @NonNls String debugName) {
+        super(debugName, DLanguage.INSTANCE);
+    }
+
+    @Override
+    public String toString() {
+        return "DLanguageTokenType." + super.toString();
+    }
+}
 
 /**
  * Type of tokens valid for the D language, mapping ParserD types to
@@ -16,7 +25,7 @@ import java.util.Map;
  * reference elsewhere - such as comment and whitespace tokens.
  * <p/>
  * TODO: use parent psi.TokenType values?
- */
+
 public abstract class DLanguageTokenType implements com.intellij.psi.TokenType {
 
     private static Map<DeeTokens, DLanguageElementType> tokens;
@@ -320,3 +329,5 @@ public abstract class DLanguageTokenType implements com.intellij.psi.TokenType {
     }
 
 }
+
+ */
