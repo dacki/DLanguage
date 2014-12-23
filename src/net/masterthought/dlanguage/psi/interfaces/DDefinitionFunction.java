@@ -1,6 +1,8 @@
 package net.masterthought.dlanguage.psi.interfaces;
 
-public interface DDefinitionFunction extends DCompositeElement {
+import com.intellij.psi.PsiNamedElement;
+
+public interface DDefinitionFunction extends DCompositeElement, PsiNamedElement {
 
 
 }
