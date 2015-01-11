@@ -2,6 +2,7 @@ package net.masterthought.dlanguage.codeinsight.dcd;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
+import com.intellij.execution.configurations.ParametersList;
 import com.intellij.notification.NotificationType;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleComponent;
@@ -65,6 +66,9 @@ public class DCDCompletionServer implements ModuleComponent, SettingsChangeNotif
         GeneralCommandLine commandLine = new GeneralCommandLine(path);
         commandLine.setWorkDirectory(workingDirectory);
         commandLine.setRedirectErrorStream(true);
+        ParametersList parametersList = commandLine.getParametersList();
+        parametersList.addParametersString(flags);
+        parametersList.addParametersString("-I" + workingDirectory + "/src");
         try {
             process = commandLine.createProcess();
         } catch (ExecutionException e) {

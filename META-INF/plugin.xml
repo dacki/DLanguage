@@ -78,6 +78,8 @@
         <lang.braceMatcher language="D" implementationClass="net.masterthought.dlanguage.features.DBraceMatcher"/>
         <lang.commenter language="D" implementationClass="net.masterthought.dlanguage.features.DCommenter"/>
         <completion.contributor language="D" implementationClass="net.masterthought.dlanguage.codeinsight.DCompletionContributor"/>
+        <codeInsight.parameterInfo language="D" implementationClass="net.masterthought.dlanguage.codeinsight.DParameterInfoHandler"/>
+
 
     </extensions>
 

@@ -7,6 +7,7 @@ import com.intellij.execution.configurations.ParametersList;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleUtilCore;
 import com.intellij.psi.PsiFile;
+import net.masterthought.dlanguage.codeinsight.dcd.completions.CallTipCompletion;
 import net.masterthought.dlanguage.codeinsight.dcd.completions.Completion;
 import net.masterthought.dlanguage.codeinsight.dcd.completions.TextCompletion;
 import net.masterthought.dlanguage.settings.ToolKey;
@@ -22,10 +23,12 @@ public class DCDCompletionClient {
     private Map<String, String> completionTypeMap = getCompletionTypeMap();
 
     public List<Completion> autoComplete(int position, PsiFile file) throws DCDCompletionServer.DCDError {
+        System.out.printf("from auto complete");
         final List<Completion> completions = Lists.newArrayList();
         final Module module = ModuleUtilCore.findModuleForPsiElement(file);
         if (module != null) {
             String path = lookupPath(module);
+            String flags = lookupFlags(module);
             if (path != null) {
                 DCDCompletionServer dcdCompletionServer = module.getComponent(DCDCompletionServer.class);
                 dcdCompletionServer.exec();
@@ -38,6 +41,7 @@ public class DCDCompletionClient {
                 commandLine.setWorkDirectory(workingDirectory);
                 commandLine.setExePath(path);
                 ParametersList parametersList = commandLine.getParametersList();
+                parametersList.addParametersString(flags);
                 parametersList.addParametersString("-c");
                 parametersList.addParametersString(String.valueOf(position));
                 parametersList.addParametersString(filePath);
@@ -47,30 +51,87 @@ public class DCDCompletionClient {
                 if (result != null && !result.isEmpty()) {
                     List<String> tokens = Arrays.asList(result.split("\\n"));
                     String firstLine = tokens.get(0);
-                    if (firstLine.contains("identifiers")) {
-                        for (String token : tokens) {
-                            if (!token.contains("identifiers")) {
-                                List<String> parts = Arrays.asList(token.split("\\s"));
-                                String completionType = getCompletionType(parts);
-                                String completionText = getCompletionText(parts);
-                                Completion completion = new TextCompletion(completionType, completionText);
-                                completions.add(completion);
-                                System.out.println(completion);
-                            }
-                        }
-                    } else if (firstLine.contains("calltips")) {
-                        //TODO - this goes in a Parameter Info handler (ctrl+p) instead of here - see: ShowParameterInfoHandler.register
-                        System.out.println(tokens);
-                    }
+                    createCallTips(completions, tokens, firstLine);
                 }
             }
         }
         return completions;
     }
 
+    private void createCallTips(List<Completion> completions, List<String> tokens, String firstLine) {
+        if (firstLine.contains("identifiers")) {
+            for (String token : tokens) {
+                if (!token.contains("identifiers")) {
+                    List<String> parts = Arrays.asList(token.split("\\s"));
+                    String completionType = getCompletionType(parts);
+                    String completionText = getCompletionText(parts);
+                    Completion completion = new TextCompletion(completionType, completionText);
+                    completions.add(completion);
+                    System.out.println(completion);
+                }
+            }
+        }
+    }
+
+    public List<Completion> autoCompleteCallTips(int position, PsiFile file) throws DCDCompletionServer.DCDError {
+        System.out.println("from calltips");
+        final List<Completion> completions = Lists.newArrayList();
+        final Module module = ModuleUtilCore.findModuleForPsiElement(file);
+        if (module != null) {
+            String path = lookupPath(module);
+            String flags = lookupFlags(module);
+            if (path != null) {
+                DCDCompletionServer dcdCompletionServer = module.getComponent(DCDCompletionServer.class);
+                dcdCompletionServer.exec();
+                System.out.println("position: " + String.valueOf(position));
+                final String filePath = file.getOriginalFile().getVirtualFile().getCanonicalPath();
+                System.out.println(filePath);
+                final String workingDirectory = file.getProject().getBasePath();
+
+                final GeneralCommandLine commandLine = new GeneralCommandLine();
+                commandLine.setWorkDirectory(workingDirectory);
+                commandLine.setExePath(path);
+                ParametersList parametersList = commandLine.getParametersList();
+                parametersList.addParametersString(flags);
+                parametersList.addParametersString("-c");
+                parametersList.addParametersString(String.valueOf(position));
+                parametersList.addParametersString(filePath);
+
+                String result = ExecUtil.readCommandLine(commandLine, file.getText());
+
+                if (result != null && !result.isEmpty()) {
+                    List<String> tokens = Arrays.asList(result.split("\\n"));
+                    String firstLine = tokens.get(0);
+                    createIdentifiers(completions, tokens, firstLine);
+                }
+            }
+        }
+        return completions;
+    }
+
+    private void createIdentifiers(List<Completion> completions, List<String> tokens, String firstLine) {
+        if (firstLine.contains("calltips")) {
+            for (String token : tokens) {
+                if (!token.contains("calltips")) {
+                    List<String> parts = Arrays.asList(token.split("\\s"));
+                    String completionType = getCompletionType(parts);
+                    String completionText = getCompletionText(parts);
+                    Completion completion = new CallTipCompletion(completionType, completionText);
+                    completions.add(completion);
+                    System.out.println(completion);
+                }
+            }
+        }
+    }
+
     @Nullable
     private String lookupPath(Module module) {
         return ToolKey.DCD_CLIENT_KEY.getPath(module.getProject());
+    }
+
+    @Nullable
+    private String lookupFlags(Module module) {
+        return ToolKey.DCD_CLIENT_KEY.getFlags(module.getProject());
     }
 
     private String getType(List<String> parts) {
