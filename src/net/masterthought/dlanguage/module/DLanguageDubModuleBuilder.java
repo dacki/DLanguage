@@ -117,6 +117,7 @@ public class DLanguageDubModuleBuilder extends DLanguageModuleBuilder {
         commandLine.setExePath(getDubBinary());
         ParametersList parametersList = commandLine.getParametersList();
         parametersList.addParametersString("init");
+        parametersList.addParametersString("--non-interactive");
 
         if (dubParams.isEmpty()) {
             parametersList.addParametersString("--format");
