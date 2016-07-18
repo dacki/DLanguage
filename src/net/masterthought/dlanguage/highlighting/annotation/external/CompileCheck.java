@@ -1,6 +1,7 @@
 package net.masterthought.dlanguage.highlighting.annotation.external;
 
 import com.intellij.execution.ExecutionException;
+import com.intellij.execution.Platform;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.configurations.ParametersList;
 import com.intellij.execution.process.OSProcessHandler;
@@ -47,7 +48,8 @@ public class CompileCheck {
 
         final StringBuilder builder = new StringBuilder();
         try {
-            OSProcessHandler process = new OSProcessHandler(commandLine.createProcess());
+            OSProcessHandler process = new OSProcessHandler(
+                    commandLine.createProcess(), commandLine.getPreparedCommandLine(Platform.current()));
             process.addProcessListener(new ProcessAdapter() {
                 @Override
                 public void onTextAvailable(ProcessEvent event, Key outputType) {

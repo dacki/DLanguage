@@ -1,6 +1,7 @@
 package net.masterthought.dlanguage.module;
 
 import com.intellij.execution.ExecutionException;
+import com.intellij.execution.Platform;
 import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.execution.configurations.*;
 import com.intellij.execution.impl.RunManagerImpl;
@@ -96,7 +97,7 @@ public class DLanguageDubModuleBuilder extends DLanguageModuleBuilder {
         return dubInitOptions;
     }
 
-    private void createDub(String workingDirectory) {
+    void createDub(String workingDirectory) {
 
         List<Pair<String, String>> dubOptions = getDubInitOptions();
         String dubFormat = "json";
@@ -129,7 +130,8 @@ public class DLanguageDubModuleBuilder extends DLanguageModuleBuilder {
         }
 
         try {
-            OSProcessHandler process = new OSProcessHandler(commandLine.createProcess());
+            OSProcessHandler process = new OSProcessHandler(
+                    commandLine.createProcess(), commandLine.getPreparedCommandLine(Platform.current()));
 
             final StringBuilder builder = new StringBuilder();
             process.addProcessListener(new ProcessAdapter() {
@@ -140,7 +142,7 @@ public class DLanguageDubModuleBuilder extends DLanguageModuleBuilder {
             });
 
             process.startNotify();
-            process.waitFor();
+            process.waitFor(10000);
              
             // write out a log file with the dub init error if dub init doesn't make the project
             // would have been nice to log an event but the new project hasn't been loaded yet so this is the

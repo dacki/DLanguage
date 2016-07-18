@@ -5,6 +5,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.intellij.execution.ExecutionException;
+import com.intellij.execution.Platform;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.configurations.ParametersList;
 import com.intellij.execution.process.OSProcessHandler;
@@ -96,7 +97,9 @@ public class DubConfigurationParser {
             ParametersList parametersList = commandLine.getParametersList();
             parametersList.addParametersString("describe");
 
-            OSProcessHandler process = new OSProcessHandler(commandLine.createProcess());
+            OSProcessHandler process = new OSProcessHandler(
+                    commandLine.createProcess(),
+                    commandLine.getPreparedCommandLine(Platform.current()));
 
             final StringBuilder builder = new StringBuilder();
             process.addProcessListener(new ProcessAdapter() {
@@ -110,7 +113,11 @@ public class DubConfigurationParser {
             process.waitFor();
 
             // remove the warning line at the top if it exists
-            String json = builder.toString().replaceAll("WARNING.+", "").trim();
+            String json = builder
+                    .toString()
+                    .replaceAll("WARNING.+", "")
+                    .trim()
+                    .replaceFirst(commandLine.getPreparedCommandLine(Platform.current()), "");
 
             // process output of dub describe into jsonObject
             return new JsonParser().parse(json).getAsJsonObject();

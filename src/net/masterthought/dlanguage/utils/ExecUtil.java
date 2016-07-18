@@ -1,6 +1,7 @@
 package net.masterthought.dlanguage.utils;
 
 import com.intellij.execution.ExecutionException;
+import com.intellij.execution.Platform;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.process.CapturingProcessHandler;
 import com.intellij.execution.process.ProcessOutput;
@@ -80,7 +81,7 @@ public class ExecUtil {
         ProcessOutput output;
         try {
             output = new CapturingProcessHandler(commandLine.createProcess(),
-                            Charset.defaultCharset(), commandLine.getCommandLineString()).runProcess();
+                    Charset.defaultCharset(), commandLine.getCommandLineString()).runProcess();
         } catch (ExecutionException e) {
             LOG.info("Failed executing " + command);
             LOG.info("Message: " + e.getMessage());
@@ -93,7 +94,7 @@ public class ExecUtil {
         }
 
         List<String> lines = output.getStdoutLines();
-        StringBuilder sb = new StringBuilder(100*lines.size());
+        StringBuilder sb = new StringBuilder(100 * lines.size());
         for (String line : lines) {
             sb.append(line);
         }
@@ -178,7 +179,11 @@ public class ExecUtil {
                 writer.flush();
                 writer.close();
             }
-            output = new CapturingProcessHandler(process).runProcess().getStdout();
+            output = new CapturingProcessHandler(
+                    process,
+                    Charset.defaultCharset(),
+                    commandLine.getPreparedCommandLine(Platform.current())
+            ).runProcess().getStdout();
         } catch (ExecutionException e) {
             LOG.debug(e);
         } catch (IOException e) {
