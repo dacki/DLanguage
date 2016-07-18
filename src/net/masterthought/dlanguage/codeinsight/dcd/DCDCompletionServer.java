@@ -145,6 +145,8 @@ public class DCDCompletionServer implements ModuleComponent, SettingsChangeNotif
                     String root = path.replaceAll("bin", "src");
                     compilerSources.add(root + "/phobos");
                     compilerSources.add(root + "/druntime/import");
+                } else if (SystemInfo.isLinux) {
+                    compilerSources.add("/usr/include/dlang/dmd");
                 }
                 // add linux and windows here once I know how
             }
